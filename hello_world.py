@@ -5,4 +5,5 @@ def hello_world(version):
     return "Hello World {}".format(version)
 
 if __name__ == "__main__":
-    print(hello_world(version))
+    while True:
+        print(hello_world(version))
