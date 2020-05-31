@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: zioalex/hello_world_app:${BUILD_NUMBER}
+        image: zioalex/hello_world_app:${LAST_APP_BUILD}
         imagePullPolicy: Never
         ports:
         - containerPort: 8000
