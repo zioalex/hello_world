@@ -20,11 +20,11 @@ spec:
     metadata:
       labels:
         app: hello-world
-        version: "1"
+        version: "${BUILD_NUMBER}"
     spec:
       containers:
       - name: hello-world
-        image: zioalex/hello_world_app:1
+        image: zioalex/hello_world_app:${BUILD_NUMBER}
         imagePullPolicy: Never
         ports:
         - containerPort: 8000
