@@ -1,5 +1,8 @@
 test:
-	py.test ./test_hello_world.py
+	# Test the simple hello_world
+	# py.test ./test_hello_world.py
+	# Test the simple_http_server
+	py.test ./test_simple_http_server.py
 
 build: 
 	echo "Build Phase"
