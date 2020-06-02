@@ -3,7 +3,7 @@ test:
 	# py.test ./test_hello_world.py
 	# Test the simple_http_server
 	python3 -m venv .venv
-	source ./.venv/bin/activate
+	. ./.venv/bin/activate
 	pip3 install -r requirements.txt --user
 	py.test ./test_simple_http_server.py
 
