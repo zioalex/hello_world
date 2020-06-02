@@ -4,7 +4,7 @@ test:
 	# Test the simple_http_server
 	python3 -m venv .venv
 	. ./.venv/bin/activate
-	pip install -r requirements.txt
+	pip3 install -r requirements.txt
 	py.test ./test_simple_http_server.py
 
 build: 
