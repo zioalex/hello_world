@@ -2,6 +2,9 @@ test:
 	# Test the simple hello_world
 	# py.test ./test_hello_world.py
 	# Test the simple_http_server
+	python3 -m venv .venv
+	. ./.venv/bin/activate
+	pip install -r requirements.txt
 	py.test ./test_simple_http_server.py
 
 build: 
