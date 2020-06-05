@@ -8,6 +8,8 @@
 # https://docs.python.org/3/library/http.server.html#http.server.SimpleHTTPRequestHandler.do_GET
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
+import threading
+import requests
 
 
 class hello_world(BaseHTTPRequestHandler):
@@ -20,12 +22,20 @@ class hello_world(BaseHTTPRequestHandler):
         return
 
 
+def runone(server_class=HTTPServer, handler_class=hello_world):
+    server_address = ('', 8000)
+    httpd = server_class(server_address, handler_class)
+    thread = threading.Thread(target=httpd.handle_request())
+    thread.start()
+
 def run(server_class=HTTPServer, handler_class=hello_world):
     server_address = ('', 8000)
     httpd = server_class(server_address, handler_class)
-    httpd.serve_forever()
+    thread = threading.Thread(target=httpd.serve_forever())
+    thread.start()
 
 
 if __name__ == "__main__":
-    run()
+    runone()
+#    requests.get("http://localhost:8000").json()
 
